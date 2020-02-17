@@ -1,0 +1,20 @@
+{
+	"propertyEditors": [
+		{
+			"alias": "Our.Umbraco.TableGenerator",
+			"name": "Table Generator",
+			"icon": "icon-forms-table",
+			"group": "Rich Content",
+			"editor": {
+				"view": "~/App_Plugins/Our.Umbraco.TableGenerator/backoffice/views/tablegenerator.editor.view.html"
+			}
+		}
+	],
+	"javascript": [
+		"/app_plugins/Our.Umbraco.TableGenerator/backoffice/controllers/tablegenerator.editor.controller.js",
+		"/app_plugins/Our.Umbraco.TableGenerator/backoffice/controllers/tablegenerator.overlay.controller.js"
+	],
+	"css": [
+		"/app_plugins/Our.Umbraco.TableGenerator/backoffice/styles/tablegenerator.styles.css"
+	]
+}
