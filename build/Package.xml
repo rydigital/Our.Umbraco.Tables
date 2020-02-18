@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+	<info>
+		<package>
+			<name>Table Generator for Umbraco</name>
+			<version>0.0.0</version>
+			<license url="http://opensource.org/licenses/MIT">MIT License</license>
+			<url></url>
+			<requirements type="Strict">
+				<major>8</major>
+				<minor>5</minor>
+				<patch>3</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>Radley Yeldar</name>
+			<website>https://ry.com/</website>
+		</author>
+		<readme>
+			<![CDATA[]]>
+		</readme>
+	</info>
+	<DocumentTypes />
+	<Templates />
+	<Stylesheets />
+	<Macros />
+	<DictionaryItems />
+	<Languages />
+	<DataTypes />
+	<Actions/>
+	<control />
+	<files />
+</umbPackage>

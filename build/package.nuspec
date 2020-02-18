@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>Our.Umbraco.TableGenerator</id>
+		<version>0.0.0</version>
+		<title>Table Generator for Umbraco</title>
+		<authors>Jack Stunell</authors>
+		<owners>Radley Yeldar</owners>
+		<projectUrl></projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description></description>
+		<summary></summary>
+		<releaseNotes></releaseNotes>
+		<copyright>Radley Yeldar</copyright>
+		<license type="expression">MIT</license>
+		<repository type="git" url="https://github.com/RY-Digital/Our.Umbraco.TableGenerator" />
+		<language>en-GB</language>
+		<tags>umbraco table tabular tables grid ry radley yeldar</tags>
+		<dependencies>
+			<dependency id="UmbracoCms.Core" version="8.5.3" />
+		</dependencies>
+	</metadata>
+</package>

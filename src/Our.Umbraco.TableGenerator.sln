@@ -16,6 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{859576E7-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.TableGenerator.Demo", "..\samples\Our.Umbraco.TableGenerator.Demo\Our.Umbraco.TableGenerator.Demo.csproj", "{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C46868F8-6241-4B8F-9086-6BB6888986A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\Build.bat = ..\build\Build.bat
+		..\build\Package.build.xml = ..\build\Package.build.xml
+		..\build\package.nuspec = ..\build\package.nuspec
+		..\build\Package.xml = ..\build\Package.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
