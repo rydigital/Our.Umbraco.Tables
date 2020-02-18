@@ -164,7 +164,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug (
-robocopy "$(ProjectDir)App_Plugins" "$(SolutionDir)..\samples\Our.Umbraco.TableGenerator.Demo\UI\App_Plugins" /s 
+robocopy "$(ProjectDir)UI\App_Plugins" "$(SolutionDir)..\samples\Our.Umbraco.TableGenerator.Demo\App_Plugins" /s 
 if %25errorlevel%25 LEQ 8 exit 0
 )</PostBuildEvent>
   </PropertyGroup>

@@ -19,26 +19,35 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.TableGenerator.Demo.Models
 {
-	/// <summary>Page</summary>
-	[PublishedModel("page")]
-	public partial class Page : PublishedContentModel, ITableComposition
+	// Mixin Content Type with alias "tableComposition"
+	/// <summary>_Table - Composition</summary>
+	public partial interface ITableComposition : IPublishedElement
+	{
+		/// <summary>Table</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		global::Our.Umbraco.TableGenerator.Models.TableData Table { get; }
+	}
+
+	/// <summary>_Table - Composition</summary>
+	[PublishedModel("tableComposition")]
+	public partial class TableComposition : PublishedElementModel, ITableComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		public new const string ModelTypeAlias = "page";
+		public new const string ModelTypeAlias = "tableComposition";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Page, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TableComposition, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Page(IPublishedContent content)
+		public TableComposition(IPublishedElement content)
 			: base(content)
 		{ }
 
@@ -49,6 +58,10 @@ namespace Our.Umbraco.TableGenerator.Demo.Models
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		[ImplementPropertyType("table")]
-		public global::Our.Umbraco.TableGenerator.Models.TableData Table => global::Our.Umbraco.TableGenerator.Demo.Models.TableComposition.GetTable(this);
+		public global::Our.Umbraco.TableGenerator.Models.TableData Table => GetTable(this);
+
+		/// <summary>Static getter for Table</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
+		public static global::Our.Umbraco.TableGenerator.Models.TableData GetTable(ITableComposition that) => that.Value<global::Our.Umbraco.TableGenerator.Models.TableData>("table");
 	}
 }

@@ -1,0 +1,38 @@
+﻿@inherits UmbracoViewPage<IEnumerable<IPublishedContent>>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+
+	<div class="container">
+
+		<a class="navbar-brand mb-0 h1" href="/">
+			Table Generator
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+
+			<ul class="navbar-nav">
+				
+				@foreach (var navigationItem in Model)
+				{
+					var isActive = navigationItem.Id.Equals(this.Umbraco.AssignedContentItem.Id);
+
+					<li class="nav-item @(isActive ? "active" : string.Empty)">
+
+						<a class="nav-link" href="@navigationItem.Url">
+							@navigationItem.Name
+						</a>
+
+					</li>
+				}
+
+			</ul>
+
+		</div>
+
+	</div>
+
+</nav>

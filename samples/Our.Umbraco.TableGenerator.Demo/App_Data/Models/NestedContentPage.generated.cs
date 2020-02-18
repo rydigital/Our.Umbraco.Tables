@@ -19,36 +19,36 @@ using Umbraco.ModelsBuilder.Embedded;
 
 namespace Our.Umbraco.TableGenerator.Demo.Models
 {
-	/// <summary>Page</summary>
-	[PublishedModel("page")]
-	public partial class Page : PublishedContentModel, ITableComposition
+	/// <summary>Nested Content Page</summary>
+	[PublishedModel("nestedContentPage")]
+	public partial class NestedContentPage : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		public new const string ModelTypeAlias = "page";
+		public new const string ModelTypeAlias = "nestedContentPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Page, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NestedContentPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Page(IPublishedContent content)
+		public NestedContentPage(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Table
+		/// Nested Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.3")]
-		[ImplementPropertyType("table")]
-		public global::Our.Umbraco.TableGenerator.Models.TableData Table => global::Our.Umbraco.TableGenerator.Demo.Models.TableComposition.GetTable(this);
+		[ImplementPropertyType("nestedContent")]
+		public global::System.Collections.Generic.IEnumerable<global::Our.Umbraco.TableGenerator.Demo.Models.TableNestedContent> NestedContent => this.Value<global::System.Collections.Generic.IEnumerable<global::Our.Umbraco.TableGenerator.Demo.Models.TableNestedContent>>("nestedContent");
 	}
 }

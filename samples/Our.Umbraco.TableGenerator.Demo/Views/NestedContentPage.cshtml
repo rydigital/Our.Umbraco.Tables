@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Our.Umbraco.TableGenerator.Demo.Models.NestedContentPage>
+
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<div class="container">
+
+	@foreach (var nestedContentItem in Model.NestedContent)
+	{
+		<section>
+			@Html.Partial("_Table", nestedContentItem.Table)
+		</section>
+	}
+
+</div>
