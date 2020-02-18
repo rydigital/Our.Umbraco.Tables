@@ -7,7 +7,7 @@ namespace Our.Umbraco.TableGenerator.Models
 	public class StyleData
 	{
 		[JsonConverter(typeof(StringEnumConverter))]
-		[JsonProperty("background-color")]
+		[JsonProperty("backgroundColor")]
 		public BackgroundColour BackgroundColor { get; set; } = BackgroundColour.None;
 	}
 }

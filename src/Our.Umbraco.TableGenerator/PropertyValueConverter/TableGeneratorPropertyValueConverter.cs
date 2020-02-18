@@ -13,7 +13,7 @@ namespace Our.Umbraco.TableGenerator.PropertyValueConverter
 
 		public override bool IsConverter(IPublishedPropertyType propertyType)
 		{
-			return propertyType.EditorAlias.Equals("Application.Feature.TableGenerator");
+			return propertyType.EditorAlias.Equals("Our.Umbraco.TableGenerator");
 		}
 
 		public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
