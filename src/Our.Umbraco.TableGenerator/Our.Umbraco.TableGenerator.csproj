@@ -149,21 +149,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Plugins\Our.Umbraco.TableGenerator\package.manifest" />
+    <None Include="UI\App_Plugins\Our.Umbraco.TableGenerator\package.manifest" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\backoffice\controllers\tablegenerator.editor.controller.js" />
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\backoffice\controllers\tablegenerator.overlay.controller.js" />
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\backoffice\styles\tablegenerator.styles.css" />
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\backoffice\views\tablegenerator.editor.view.html" />
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\backoffice\views\tablegenerator.overlay.view.html" />
-    <Content Include="App_Plugins\Our.Umbraco.TableGenerator\Lang\en-US.xml" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\backoffice\controllers\tablegenerator.editor.controller.js" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\backoffice\controllers\tablegenerator.overlay.controller.js" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\backoffice\styles\tablegenerator.styles.css" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\backoffice\views\tablegenerator.editor.view.html" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\backoffice\views\tablegenerator.overlay.view.html" />
+    <Content Include="UI\App_Plugins\Our.Umbraco.TableGenerator\Lang\en-US.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug (
-robocopy "$(ProjectDir)App_Plugins" "$(SolutionDir)..\samples\Our.Umbraco.TableGenerator.Demo\App_Plugins" /s 
+robocopy "$(ProjectDir)App_Plugins" "$(SolutionDir)..\samples\Our.Umbraco.TableGenerator.Demo\UI\App_Plugins" /s 
 if %25errorlevel%25 LEQ 8 exit 0
 )</PostBuildEvent>
   </PropertyGroup>
