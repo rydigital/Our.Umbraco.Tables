@@ -3,10 +3,11 @@
 		{
 			"alias": "Our.Umbraco.TableGenerator",
 			"name": "Table Generator",
-			"icon": "icon-forms-table",
+			"icon": "icon-grid",
 			"group": "Rich Content",
 			"editor": {
-				"view": "~/App_Plugins/Our.Umbraco.TableGenerator/backoffice/views/tablegenerator.editor.view.html"
+				"view": "~/App_Plugins/Our.Umbraco.TableGenerator/backoffice/views/tablegenerator.editor.view.html",
+				"valueType": "JSON"
 			}
 		}
 	],
