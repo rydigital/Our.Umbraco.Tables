@@ -6,10 +6,10 @@
 		<title>Table Generator for Umbraco</title>
 		<authors>Jack Stunell</authors>
 		<owners>Radley Yeldar</owners>
-		<projectUrl></projectUrl>
+		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.TableGenerator</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description></description>
-		<summary></summary>
+		<description>Table Generator for Umbraco</description>
+		<summary>Table Generator for Umbraco</summary>
 		<releaseNotes></releaseNotes>
 		<copyright>Radley Yeldar</copyright>
 		<license type="expression">MIT</license>

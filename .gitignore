@@ -161,3 +161,5 @@ UpgradeLog*.htm
 samples/*/Umbraco/
 samples/*/App_Data/Logs/
 samples/*/App_Data/TEMP/*
+build/Package
+build/msbuild.binlog
