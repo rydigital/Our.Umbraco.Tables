@@ -158,7 +158,6 @@ UpgradeLog*.htm
 *.ldf
 
 # UmbracoCms
-umbraco/
-umbraco_client/
-App_Data/
-App_Code
+samples/*/Umbraco/
+samples/*/App_Data/Logs/
+samples/*/App_Data/TEMP/*
