@@ -4,7 +4,7 @@
 		<id>Our.Umbraco.TableGenerator</id>
 		<version>0.0.0</version>
 		<title>Table Generator for Umbraco</title>
-		<authors>Jack Stunell</authors>
+		<authors>Radley Yeldar: Jack Stunell</authors>
 		<owners>Radley Yeldar</owners>
 		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.TableGenerator</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -17,7 +17,7 @@
 		<language>en-GB</language>
 		<tags>umbraco table tabular tables grid ry radley yeldar</tags>
 		<dependencies>
-			<dependency id="UmbracoCms.Core" version="8.5.3" />
+			<dependency id="UmbracoCms.Core" version="8.0.0" />
 		</dependencies>
 	</metadata>
 </package>
