@@ -8,7 +8,7 @@
 			<url>https://github.com/RY-Digital/Our.Umbraco.Tables</url>
 			<requirements type="Strict">
 				<major>8</major>
-				<minor>0</minor>
+				<minor>1</minor>
 				<patch>0</patch>
 			</requirements>
 		</package>

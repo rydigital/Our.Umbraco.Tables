@@ -3,13 +3,13 @@
 	<metadata>
 		<id>Our.Umbraco.Tables</id>
 		<version>0.0.0</version>
-		<title>Table Generator for Umbraco</title>
+		<title>Tables for Umbraco</title>
 		<authors>Radley Yeldar: Jack Stunell</authors>
 		<owners>Radley Yeldar</owners>
 		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.Tables</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Table Generator for Umbraco</description>
-		<summary>Table Generator for Umbraco</summary>
+		<description>Tables for Umbraco</description>
+		<summary>Tables for Umbraco</summary>
 		<releaseNotes></releaseNotes>
 		<copyright>Radley Yeldar</copyright>
 		<license type="expression">MIT</license>
@@ -17,7 +17,7 @@
 		<language>en-GB</language>
 		<tags>umbraco table tabular tables grid ry radley yeldar</tags>
 		<dependencies>
-			<dependency id="UmbracoCms.Core" version="8.0.0" />
+			<dependency id="UmbracoCms.Core" version="8.1.0" />
 		</dependencies>
 	</metadata>
 </package>
