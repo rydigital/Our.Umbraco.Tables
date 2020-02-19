@@ -32,42 +32,42 @@ Simplified, you can generate a table with something like this
 
     @using Our.Umbraco.Tables.Enums
     @using Our.Umbraco.Tables.Models
+    @model Our.Umbraco.Tables.Models.TableData
 
-    @if (Model != null)
-    {
+    @{
         var firstRow = Model.Cells.FirstOrDefault();
         var rows = Model.Rows.ToList();
         var columns = Model.Columns.ToList();
         var tableStyles = Model.Settings;
+    }
 
-        if (firstRow != null)
-        {
-            <table class="@GetCssClass(tableStyles)">
-                <thead>
-                    <tr class="@GetCssClass(tableStyles, Model.Rows.FirstOrDefault())">
-                        @foreach (var cell in firstRow)
+    @if (firstRow != null)
+    {
+        <table class="@GetCssClass(tableStyles)">
+            <thead>
+                <tr class="@GetCssClass(tableStyles, Model.Rows.FirstOrDefault())">
+                    @foreach (var cell in firstRow)
+                    {
+                        <th class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])" scope="col">
+                            @Html.Raw(cell.Value)
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.Cells.Skip(1))
+                {
+                    <tr class="@GetCssClass(tableStyles, rows[row.FirstOrDefault().RowIndex])">
+                        @foreach (var cell in row)
                         {
-                            <th class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])" scope="col">
+                            <td class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])">
                                 @Html.Raw(cell.Value)
-                            </th>
+                            </td>
                         }
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var row in Model.Cells.Skip(1))
-                    {
-                        <tr class="@GetCssClass(tableStyles, rows[row.FirstOrDefault().RowIndex])">
-                            @foreach (var cell in row)
-                            {
-                                <td class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])">
-                                    @Html.Raw(cell.Value)
-                                </td>
-                            }
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
+                }
+            </tbody>
+        </table>
     }
 
     @functions
