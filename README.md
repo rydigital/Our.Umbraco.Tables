@@ -1,4 +1,4 @@
-Our.Umbraco.TableGenerator
+Our.Umbraco.Tables
 =====================
 
 An Umbraco 8+ property editor for generating tabular data in the CMS.
@@ -23,15 +23,15 @@ This is now ready to use on a Document Type.
 ### Output ###
 
 If using ModelsBuilder the property should appear as a class
-`Our.Umbraco.TableGenerator.Models.TableData`
+`Our.Umbraco.Tables.Models.TableData`
 
 This contains all the rows, columns, cells and settings. You are free to output this how you see fit. There is a demo site with razor markup to generate a table using Bootstrap classes.
 
 
 Simplified, you can generate a table with something like this
 
-    @using Our.Umbraco.TableGenerator.Enums
-    @using Our.Umbraco.TableGenerator.Models
+    @using Our.Umbraco.Tables.Enums
+    @using Our.Umbraco.Tables.Models
 
     @if (Model != null)
     {

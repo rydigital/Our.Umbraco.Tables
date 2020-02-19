@@ -2,10 +2,10 @@
 <umbPackage>
 	<info>
 		<package>
-			<name>Our.Umbraco.TableGenerator</name>
+			<name>Our.Umbraco.Tables</name>
 			<version>0.0.0</version>
 			<license url="http://opensource.org/licenses/MIT">MIT License</license>
-			<url>https://github.com/RY-Digital/Our.Umbraco.TableGenerator</url>
+			<url>https://github.com/RY-Digital/Our.Umbraco.Tables</url>
 			<requirements type="Strict">
 				<major>8</major>
 				<minor>0</minor>

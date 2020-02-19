@@ -26,8 +26,8 @@
 		<BuildDir>$(MSBuildProjectDirectory)\Build</BuildDir>
 		<PackageDir>$(MSBuildProjectDirectory)\Package</PackageDir>
 		<BuildNuGetDir>$(MSBuildProjectDirectory)\NugetBuild</BuildNuGetDir>
-		<CoreProjectDir>$(RootDir)\src\Our.Umbraco.TableGenerator</CoreProjectDir>
-		<PropertyEditorProjectDir>$(RootDir)\src\Our.Umbraco.TableGenerator\UI\</PropertyEditorProjectDir>
+		<CoreProjectDir>$(RootDir)\src\Our.Umbraco.Tables</CoreProjectDir>
+		<PropertyEditorProjectDir>$(RootDir)\src\Our.Umbraco.Tables\UI\</PropertyEditorProjectDir>
 	</PropertyGroup>
 
 	<!-- TARGETS -->
@@ -57,13 +57,13 @@
 
 	<!-- COMPILE -->
 	<Target Name="Compile" DependsOnTargets="UpdateAssemblyInfo">
-		<MSBuild Projects="$(CoreProjectDir)\Our.Umbraco.TableGenerator.csproj" />
+		<MSBuild Projects="$(CoreProjectDir)\Our.Umbraco.Tables.csproj" />
 	</Target>
 
 	<!-- PREPARE FILES -->
 	<Target Name="PrepairFiles" DependsOnTargets="Compile">
 		<ItemGroup>
-			<CoreBinFile Include="$(CoreProjectDir)\Bin\Release\Our.Umbraco.TableGenerator.dll" />
+			<CoreBinFile Include="$(CoreProjectDir)\Bin\Release\Our.Umbraco.Tables.dll" />
 			<PackageFile Include="$(MSBuildProjectDirectory)\Package.xml" />
 			<NuSpecFile Include="$(MSBuildProjectDirectory)\package.nuspec" />
 			<AppPluginFiles Include="$(PropertyEditorProjectDir)\**\*" />
