@@ -14,7 +14,7 @@ It is created as a data type and then used as a property of a doctype. There is 
 
 ### Use ###
 
-After installation, Umbraco should automatically find Our.Umbraco.Tables and make it available to you when creating a new data type.
+After installation, Umbraco should automatically find **Our.Umbraco.Tables** and make it available to you when creating a new data type.
 
 Create a new data type in 'Settings / Data Types' and choose 'Our.Umbraco.Tables' from the drop down.
 
@@ -26,7 +26,6 @@ If using ModelsBuilder the property should appear as a class
 `Our.Umbraco.Tables.Models.TableData`
 
 This contains all the rows, columns, cells and settings. You are free to output this how you see fit. There is a demo site with razor markup to generate a table using Bootstrap classes.
-
 
 Simplified, you can generate a table with something like this
 

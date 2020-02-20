@@ -3,13 +3,13 @@
 	<metadata>
 		<id>Our.Umbraco.Tables</id>
 		<version>0.0.0</version>
-		<title>Tables for Umbraco</title>
-		<authors>Radley Yeldar: Jack Stunell</authors>
+		<title>Our.Umbraco.Tables</title>
+		<authors>Radley Yeldar</authors>
 		<owners>Radley Yeldar</owners>
 		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.Tables</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Tables for Umbraco</description>
-		<summary>Tables for Umbraco</summary>
+		<description>Our.Umbraco.Tables</description>
+		<summary>Our.Umbraco.Tables</summary>
 		<releaseNotes></releaseNotes>
 		<copyright>Radley Yeldar</copyright>
 		<license type="expression">MIT</license>
