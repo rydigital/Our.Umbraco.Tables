@@ -14,9 +14,9 @@ It is created as a data type and then used as a property of a doctype. There is 
 
 ### Use ###
 
-After installation, Umbraco should automatically find the Table Generator and make it available to you when creating a new data type.
+After installation, Umbraco should automatically find Our.Umbraco.Tables and make it available to you when creating a new data type.
 
-Create a new data type in 'Settings / Data Types' and choose 'Table Generator' from the drop down.
+Create a new data type in 'Settings / Data Types' and choose 'Our.Umbraco.Tables' from the drop down.
 
 This is now ready to use on a Document Type.
 

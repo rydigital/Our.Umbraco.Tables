@@ -2,7 +2,7 @@
 	"propertyEditors": [
 		{
 			"alias": "Our.Umbraco.Tables",
-			"name": "Table Generator",
+			"name": "Our.Umbraco.Tables",
 			"icon": "icon-grid",
 			"group": "Rich Content",
 			"editor": {

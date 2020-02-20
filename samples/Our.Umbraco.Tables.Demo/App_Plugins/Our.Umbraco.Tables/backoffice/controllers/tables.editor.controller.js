@@ -1,4 +1,4 @@
-function tableGeneratorEditorController($scope, $routeParams)
+function tablesEditorController($scope, $routeParams)
 {
 	var vm = this;
 
@@ -395,4 +395,4 @@ function tableGeneratorEditorController($scope, $routeParams)
 	_init();
 }
 
-angular.module("umbraco").controller("Our.Umbraco.Tables.BackOffice.Editor.Controller", tableGeneratorEditorController);
+angular.module("umbraco").controller("Our.Umbraco.Tables.BackOffice.Editor.Controller", tablesEditorController);

@@ -1,6 +1,6 @@
-function tableGeneratorOverlayController($scope, tinyMceService)
+function tablesOverlayController($scope, tinyMceService)
 {
 	console.log("Table Overlay", $scope.model);
 }
 
-angular.module("umbraco").controller("Our.Umbraco.Tables.BackOffice.Overlay.Controller", tableGeneratorOverlayController);
+angular.module("umbraco").controller("Our.Umbraco.Tables.BackOffice.Overlay.Controller", tablesOverlayController);

@@ -341,10 +341,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Our.Umbraco.Tables\Our.Umbraco.Tables.csproj">
       <Project>{798fab04-946e-4e4f-8520-746fcd436f25}</Project>
-      <Name>Our.Umbraco.TableGenerator</Name>
+      <Name>Our.Umbraco.Tables</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
