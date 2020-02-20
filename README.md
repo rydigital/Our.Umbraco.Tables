@@ -6,11 +6,11 @@ It is created as a data type and then used as a property of a doctype. There is 
 
 ### Install ###
 
-`PM> Install-Package [TBC]`
+`PM> Install-Package Our.Umbraco.Tables`
 
-**Umbraco Package:** http://our.umbraco.org/projects/developer-tools/[TBC]
+**Umbraco Package:** http://our.umbraco.org/projects/developer-tools/Our.Umbraco.Tables
 
-**NuGet Package:** https://www.nuget.org/packages/[TBC]
+**NuGet Package:** https://www.nuget.org/packages/Our.Umbraco.Tables
 
 ### Use ###
 
@@ -94,3 +94,12 @@ Simplified, you can generate a table with something like this
             }
         }
     }
+
+### DEMO ###
+
+You can find a demo site in the source.
+
+`samples\Our.Umbraco.Tables.Demo`
+
+**username**: admin@ry.com
+**password**: password1234
