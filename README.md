@@ -22,6 +22,8 @@ This is now ready to use on a Document Type.
 
 ![Property Editor](https://raw.githubusercontent.com/RY-Digital/Our.Umbraco.Tables/develop/assets/property-editor.png)
 
+![Settings](https://raw.githubusercontent.com/RY-Digital/Our.Umbraco.Tables/develop/assets/settings.png)
+
 ### Output ###
 
 If using ModelsBuilder the property should appear as a class
