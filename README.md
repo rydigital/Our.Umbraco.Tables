@@ -20,6 +20,10 @@ Create a new data type in 'Settings / Data Types' and choose 'Our.Umbraco.Tables
 
 This is now ready to use on a Document Type.
 
+![Property Editor](https://raw.github.com/RY-Digital/Our.Umbraco.Tables/develop/assets/property-editor.png "Property Editor")
+
+![Output](https://raw.github.com/RY-Digital/Our.Umbraco.Tables/develop/assets/output.png "Output")
+
 ### Output ###
 
 If using ModelsBuilder the property should appear as a class
