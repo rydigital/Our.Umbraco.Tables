@@ -22,8 +22,6 @@ This is now ready to use on a Document Type.
 
 ![Property Editor](https://raw.githubusercontent.com/RY-Digital/Our.Umbraco.Tables/develop/assets/property-editor.png)
 
-![Output](https://raw.githubusercontent.com/RY-Digital/Our.Umbraco.Tables/develop/assets/output.png)
-
 ### Output ###
 
 If using ModelsBuilder the property should appear as a class
@@ -31,7 +29,8 @@ If using ModelsBuilder the property should appear as a class
 
 This contains all the rows, columns, cells and settings. You are free to output this how you see fit. There is a demo site with razor markup to generate a table using Bootstrap classes.
 
-Simplified, you can generate a table with something like this
+#### Razor ####
+You can generate a table with something like this
 
     @using Our.Umbraco.Tables.Enums
     @using Our.Umbraco.Tables.Models
@@ -99,11 +98,290 @@ Simplified, you can generate a table with something like this
         }
     }
 
+![Output](https://raw.githubusercontent.com/RY-Digital/Our.Umbraco.Tables/develop/assets/output.png)
+
+#### JSON ####
+
+If you want JSON then it will output as something like this.
+
+    {
+        "settings": {
+            "backgroundColor": "None"
+        },
+        "rows": [
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            }
+        ],
+        "columns": [
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            },
+            {
+            "backgroundColor": "None"
+            }
+        ],
+        "cells": [
+            [
+            {
+                "rowIndex": 0,
+                "columnIndex": 0,
+                "value": "<p><strong>Assets</strong></p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 1,
+                "value": "<p><strong>4 April 2019</strong><br /><strong>£m</strong></p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 2,
+                "value": "<p>%</p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 3,
+                "value": "<p>5 April 2018<br />(note i)<br />£m</p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 4,
+                "value": "<p>%</p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 5,
+                "value": "<p>4 April<br />£m</p>"
+            },
+            {
+                "rowIndex": 0,
+                "columnIndex": 6,
+                "value": "<p>%</p>"
+            }
+            ],
+            [
+            {
+                "rowIndex": 1,
+                "columnIndex": 0,
+                "value": "<p>Residential mortgages (note ii)</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 1,
+                "value": "<p>180,008</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 2,
+                "value": "<p>97</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 3,
+                "value": "<p>144,339</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 4,
+                "value": "<p>94</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 5,
+                "value": "<p>145,669</p>"
+            },
+            {
+                "rowIndex": 1,
+                "columnIndex": 6,
+                "value": "<p>83</p>"
+            }
+            ],
+            [
+            {
+                "rowIndex": 2,
+                "columnIndex": 0,
+                "value": "<p>Commercial and other lending (note iii)</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 1,
+                "value": "<p>9,534</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 2,
+                "value": "<p>2</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 3,
+                "value": "<p>11,345</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 4,
+                "value": "<p>5</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 5,
+                "value": "<p>11,234</p>"
+            },
+            {
+                "rowIndex": 2,
+                "columnIndex": 6,
+                "value": "<p>9</p>"
+            }
+            ],
+            [
+            {
+                "rowIndex": 3,
+                "columnIndex": 0,
+                "value": "<p>Consumer banking</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 1,
+                "value": "<p>3,244</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 2,
+                "value": "<p>1</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 3,
+                "value": "<p>4,569</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 4,
+                "value": "<p>1</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 5,
+                "value": "<p>4,159</p>"
+            },
+            {
+                "rowIndex": 3,
+                "columnIndex": 6,
+                "value": "<p>8</p>"
+            }
+            ],
+            [
+            {
+                "rowIndex": 4,
+                "columnIndex": 0,
+                "value": ""
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 1,
+                "value": "<p>192,786</p>"
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 2,
+                "value": "<p>100</p>"
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 3,
+                "value": "<p>160,253</p>"
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 4,
+                "value": "<p>100</p>"
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 5,
+                "value": "<p>161,062</p>"
+            },
+            {
+                "rowIndex": 4,
+                "columnIndex": 6,
+                "value": "<p>100</p>"
+            }
+            ],
+            [
+            {
+                "rowIndex": 5,
+                "columnIndex": 0,
+                "value": "<p>Impairment provisions</p>"
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 1,
+                "value": "<p>(564)</p>"
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 2,
+                "value": ""
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 3,
+                "value": "<p>(433)</p>"
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 4,
+                "value": ""
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 5,
+                "value": "<p>(344)</p>"
+            },
+            {
+                "rowIndex": 5,
+                "columnIndex": 6,
+                "value": ""
+            }
+            ]
+        ]
+    }
+
 ### DEMO ###
 
 You can find a demo site in the source.
 
 `samples\Our.Umbraco.Tables.Demo`
 
-**username**: admin@ry.com
+**username**: admin@ry.com  
 **password**: password1234
