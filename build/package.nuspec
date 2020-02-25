@@ -6,14 +6,14 @@
 		<title>Our.Umbraco.Tables</title>
 		<authors>Radley Yeldar</authors>
 		<owners>Radley Yeldar</owners>
-		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.Tables</projectUrl>
+		<projectUrl>https://github.com/rydigital/Our.Umbraco.Tables</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Our.Umbraco.Tables</description>
+		<description>A simple property editor for creating richtext tables. Comes with property value converter.</description>
 		<summary>Our.Umbraco.Tables</summary>
 		<releaseNotes></releaseNotes>
 		<copyright>Radley Yeldar</copyright>
 		<license type="expression">MIT</license>
-		<repository type="git" url="https://github.com/RY-Digital/Our.Umbraco.Tables" />
+		<repository type="git" url="https://github.com/rydigital/Our.Umbraco.Tables" />
 		<language>en-GB</language>
 		<tags>umbraco table tabular tables grid ry radley yeldar</tags>
 		<dependencies>
