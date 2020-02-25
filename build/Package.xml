@@ -3,9 +3,9 @@
 	<info>
 		<package>
 			<name>Our.Umbraco.Tables</name>
-			<version>0.0.0</version>
+			<version>1.0.0</version>
 			<license url="http://opensource.org/licenses/MIT">MIT License</license>
-			<url>https://github.com/RY-Digital/Our.Umbraco.Tables</url>
+			<url>https://github.com/rydigital/Our.Umbraco.Tables</url>
 			<requirements type="Strict">
 				<major>8</major>
 				<minor>1</minor>
@@ -14,7 +14,7 @@
 		</package>
 		<author>
 			<name>Radley Yeldar</name>
-			<website>https://ry.com/</website>
+			<website>https://ry.com</website>
 		</author>
 		<readme>
 			<![CDATA[]]>
