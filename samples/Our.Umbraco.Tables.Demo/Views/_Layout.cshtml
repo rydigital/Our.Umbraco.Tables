@@ -1,0 +1,18 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Radley Yeldar - Our.Umbraco.Tables</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+	</head>
+	<body>
+		@Html.Action("Render", "Navigation")
+		<main class="pt-3">
+			@RenderBody()
+		</main>
+	</body>
+</html>

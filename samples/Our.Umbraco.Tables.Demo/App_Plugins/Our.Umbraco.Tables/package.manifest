@@ -1,0 +1,21 @@
+{
+	"propertyEditors": [
+		{
+			"alias": "Our.Umbraco.Tables",
+			"name": "Our.Umbraco.Tables",
+			"icon": "icon-grid",
+			"group": "Rich Content",
+			"editor": {
+				"view": "~/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.editor.view.html",
+				"valueType": "JSON"
+			}
+		}
+	],
+	"javascript": [
+		"/app_plugins/Our.Umbraco.Tables/backoffice/controllers/tables.editor.controller.js",
+		"/app_plugins/Our.Umbraco.Tables/backoffice/controllers/tables.overlay.controller.js"
+	],
+	"css": [
+		"/app_plugins/Our.Umbraco.Tables/backoffice/styles/tables.styles.css"
+	]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>Our.Umbraco.Tables</id>
+		<version>1.0.0</version>
+		<title>Our.Umbraco.Tables</title>
+		<authors>Radley Yeldar</authors>
+		<owners>Radley Yeldar</owners>
+		<projectUrl>https://github.com/RY-Digital/Our.Umbraco.Tables</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Our.Umbraco.Tables</description>
+		<summary>Our.Umbraco.Tables</summary>
+		<releaseNotes></releaseNotes>
+		<copyright>Radley Yeldar</copyright>
+		<license type="expression">MIT</license>
+		<repository type="git" url="https://github.com/RY-Digital/Our.Umbraco.Tables" />
+		<language>en-GB</language>
+		<tags>umbraco table tabular tables grid ry radley yeldar</tags>
+		<dependencies>
+			<dependency id="UmbracoCms.Core" version="8.1.0" />
+		</dependencies>
+	</metadata>
+</package>
