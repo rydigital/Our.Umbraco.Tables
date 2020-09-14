@@ -1,5 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.props" Condition="Exists('..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.props')" />
+  <Import Project="..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.props" Condition="Exists('..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.props')" />
   <Import Project="..\..\src\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\src\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClientDependency.Core, Version=1.9.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\ClientDependency.1.9.8\lib\net45\ClientDependency.Core.dll</HintPath>
+    <Reference Include="ClientDependency.Core, Version=1.9.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\src\packages\ClientDependency.1.9.9\lib\net45\ClientDependency.Core.dll</HintPath>
     </Reference>
     <Reference Include="ClientDependency.Core.Mvc, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\src\packages\ClientDependency-Mvc5.1.9.3\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
@@ -53,8 +53,8 @@
     <Reference Include="CSharpTest.Net.Collections, Version=14.906.1403.1082, Culture=neutral, PublicKeyToken=06aee00cce822474, processorArchitecture=MSIL">
       <HintPath>..\..\src\packages\CSharpTest.Net.Collections.14.906.1403.1082\lib\net40\CSharpTest.Net.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Examine, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\Examine.1.0.1\lib\net452\Examine.dll</HintPath>
+    <Reference Include="Examine, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\src\packages\Examine.1.0.2\lib\net452\Examine.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\..\src\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -243,19 +243,19 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\UmbracoCms.Core.8.5.3\lib\net472\Umbraco.Core.dll</HintPath>
+      <HintPath>..\..\src\packages\UmbracoCms.Core.8.6.0\lib\net472\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Examine.dll</HintPath>
+      <HintPath>..\..\src\packages\UmbracoCms.Web.8.6.0\lib\net472\Umbraco.Examine.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+      <HintPath>..\..\src\packages\UmbracoCms.Web.8.6.0\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Web.dll</HintPath>
+      <HintPath>..\..\src\packages\UmbracoCms.Web.8.6.0\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\src\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Web.UI.dll</HintPath>
+      <HintPath>..\..\src\packages\UmbracoCms.Web.8.6.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +316,13 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Page.cshtml" />
+    <Content Include="Views\Partials\_Table.cshtml" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\Partials\_Json.cshtml" />
+    <Content Include="Views\Partials\_Navigation.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\NestedContentPage.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
@@ -324,13 +331,6 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Page.cshtml" />
-    <Content Include="Views\Partials\_Table.cshtml" />
-    <Content Include="Views\_Layout.cshtml" />
-    <Content Include="Views\Partials\_Json.cshtml" />
-    <Content Include="Views\Partials\_Navigation.cshtml" />
-    <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\NestedContentPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -375,11 +375,11 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\src\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\..\src\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
-    <Error Condition="!Exists('..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.props'))" />
-    <Error Condition="!Exists('..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.targets'))" />
   </Target>
   <Import Project="..\..\src\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\..\src\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
-  <Import Project="..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets" Condition="Exists('..\..\src\packages\UmbracoCms.8.5.3\build\UmbracoCms.targets')" />
+  <Import Project="..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.targets" Condition="Exists('..\..\src\packages\UmbracoCms.8.6.0\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
