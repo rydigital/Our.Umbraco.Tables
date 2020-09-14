@@ -191,7 +191,9 @@ function tablesEditorController($scope, $routeParams) {
 				vm.richTextEditor = null;
 			},
 			close: function (model) {
-			},
+				vm.richTextEditor.show = false;
+				vm.richTextEditor = null;
+            },
 			error: function (error) {
 			}
 		};
