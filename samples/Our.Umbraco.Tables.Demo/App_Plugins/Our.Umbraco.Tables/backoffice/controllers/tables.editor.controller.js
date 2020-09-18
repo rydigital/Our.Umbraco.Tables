@@ -1,5 +1,4 @@
-function tablesEditorController($scope, $routeParams)
-{
+function tablesEditorController($scope, $routeParams, editorService) {
 	var vm = this;
 
 	var rowSettings = {
@@ -18,16 +17,14 @@ function tablesEditorController($scope, $routeParams)
 		oddEvenReverse: { name: "Odd and Even (reversed)", value: "oddevenreverse", sortOrder: 5 }
 	};
 
-	function _addRow()
-	{
+	function _addRow() {
 		var row = {
 			backgroundColor: 'none'
 		};
 
 		vm.table.rows.push(row);
 
-		if (vm.table.columns.length === 0)
-		{
+		if (vm.table.columns.length === 0) {
 			_addColumn();
 			return;
 		}
@@ -35,10 +32,8 @@ function tablesEditorController($scope, $routeParams)
 		_addEmptyCells();
 	}
 
-	function _addColumn()
-	{
-		if (vm.table.columns.length >= 12)
-		{
+	function _addColumn() {
+		if (vm.table.columns.length >= 12) {
 			return;
 		}
 
@@ -50,33 +45,27 @@ function tablesEditorController($scope, $routeParams)
 		_addEmptyCells();
 	}
 
-	function _addEmptyCells()
-	{
-		if (vm.table.cells.length === 0)
-		{
+	function _addEmptyCells() {
+		if (vm.table.cells.length === 0) {
 			_addNewRows(vm.table.rows.length);
 		}
-		else
-		{
+		else {
 			// get column difference 
 			var firstCell = vm.table.cells[0];
 			var diffColumns = vm.table.columns.length - firstCell.length;
 
 			console.log(`DiffColumns: ${diffColumns}`);
 
-			if (diffColumns < 0)
-			{
+			if (diffColumns < 0) {
 				// remove columns
 				vm.table.cells.forEach((row) => {
 					row.splice(row.length - diffColumns, diffColumns);
 				});
 			}
-			else if (diffColumns > 0)
-			{
+			else if (diffColumns > 0) {
 				// add columns
 				vm.table.cells.forEach((row, index) => {
-					for (var x = 0; x < diffColumns; x++)
-					{
+					for (var x = 0; x < diffColumns; x++) {
 						row.push(_getEmptyCell(index, (vm.table.columns.length - 1) + x));
 					}
 				});
@@ -85,13 +74,11 @@ function tablesEditorController($scope, $routeParams)
 			// get row difference
 			var diffRows = vm.table.rows.length - vm.table.cells.length;
 
-			if (diffRows < 0)
-			{
+			if (diffRows < 0) {
 				// remove rows
 				vm.table.cells.splice(diffRows, diffRows);
 			}
-			else if (diffRows > 0)
-			{
+			else if (diffRows > 0) {
 				_addNewRows(diffRows);
 			}
 		}
@@ -99,14 +86,11 @@ function tablesEditorController($scope, $routeParams)
 		console.log(vm.table);
 	}
 
-	function _addNewRows(count)
-	{
-		for (var i = 0; i < count; i++)
-		{
+	function _addNewRows(count) {
+		for (var i = 0; i < count; i++) {
 			var rows = [];
 
-			for (var column = 0; column < vm.table.columns.length; column++)
-			{
+			for (var column = 0; column < vm.table.columns.length; column++) {
 				var cell = _getEmptyCell((vm.table.rows.length - 1) + i, column);
 				rows.push(cell);
 			}
@@ -115,8 +99,7 @@ function tablesEditorController($scope, $routeParams)
 		}
 	}
 
-	function _getEmptyCell(rowIndex, columnIndex)
-	{
+	function _getEmptyCell(rowIndex, columnIndex) {
 		return {
 			rowIndex: rowIndex,
 			columnIndex: columnIndex,
@@ -124,22 +107,17 @@ function tablesEditorController($scope, $routeParams)
 		};
 	}
 
-	function _reIndexCells()
-	{
-		vm.table.cells.forEach(function (row, rowIndex)
-		{
-			row.forEach(function (cell, colIndex)
-			{
+	function _reIndexCells() {
+		vm.table.cells.forEach(function (row, rowIndex) {
+			row.forEach(function (cell, colIndex) {
 				cell.columnIndex = colIndex;
 				cell.rowIndex = rowIndex;
 			});
 		});
 	}
 
-	function _removeColumn(index)
-	{
-		if (vm.table.columns.length === 1)
-		{
+	function _removeColumn(index) {
+		if (vm.table.columns.length === 1) {
 			return;
 		}
 
@@ -150,10 +128,8 @@ function tablesEditorController($scope, $routeParams)
 		_reIndexCells();
 	}
 
-	function _removeRow(index)
-	{
-		if (vm.table.rows.length === 1)
-		{
+	function _removeRow(index) {
+		if (vm.table.rows.length === 1) {
 			return;
 		}
 
@@ -162,12 +138,11 @@ function tablesEditorController($scope, $routeParams)
 		_reIndexCells();
 	}
 
-	function _editCell(cell)
-	{
-		vm.richTextEditor = {
+	function _editCell(cell) {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit cell value",
+			size: "small",
 			prop: {
 				alias: "value",
 				label: "",
@@ -175,16 +150,32 @@ function tablesEditorController($scope, $routeParams)
 				config: {
 					editor: {
 						toolbar: [
+							"ace",
+							//	"removeformat",
+							"styleselect",
 							"bold",
-							"underline",
 							"italic",
+							//	"underline",
+							//	"strikethrough",
 							"alignleft",
 							"aligncenter",
 							"alignright",
+							//	"alignjustify",
 							"bullist",
 							"numlist",
-							"mceinsertanchor",
-							"mcelink"
+							//	"outdent",
+							//	"indent",
+							"link",
+							//	"unlink",
+							"umbmediapicker",
+							//	"umbmacro",
+							//	"umbembeddialog",
+							//	"hr",
+							//	"subscript",
+							//	"superscript",
+							//	"charmap",
+							//	"rtl",
+							//	"ltr"
 						],
 						dimensions: {
 							height: 500,
@@ -194,20 +185,21 @@ function tablesEditorController($scope, $routeParams)
 				},
 				value: cell.value
 			},
-			submit: function (model)
-			{
-				console.log(model);
+			submit: function (model) {
 				cell.value = model.prop.value;
-				vm.richTextEditor.show = false;
-				vm.richTextEditor = null;
+                editorService.close();
+            },
+			close: function (model) {
+                editorService.close();
+            },
+			error: function (error) {
 			}
 		};
-	}
+        editorService.open(options);
+    }
 
-	function _getCssClass(backgroundColour)
-	{
-		switch (backgroundColour)
-		{
+	function _getCssClass(backgroundColour) {
+		switch (backgroundColour) {
 			case 'none':
 				return '';
 			case 'primary':
@@ -225,44 +217,36 @@ function tablesEditorController($scope, $routeParams)
 		}
 	}
 
-	function _getTableClass()
-	{
+	function _getTableClass() {
 		return vm.table.settings.backgroundColor !== 'none'
 			? _getCssClass(vm.table.settings.backgroundColor)
 			: '';
 	}
 
-	function _getRowClass(rowIndex)
-	{
-		if (vm.table.settings.backgroundColor !== 'none')
-		{
+	function _getRowClass(rowIndex) {
+		if (vm.table.settings.backgroundColor !== 'none') {
 			return _getCssClass(vm.table.settings.backgroundColor);
 		}
 
 		var row = vm.table.rows[rowIndex];
 
-		if (!row)
-		{
+		if (!row) {
 			return '';
 		}
 
 		return _getCssClass(row.backgroundColor);
 	}
 
-	function _getColumnClass(cell)
-	{
-		if (vm.table.settings.backgroundColor !== 'none')
-		{
+	function _getColumnClass(cell) {
+		if (vm.table.settings.backgroundColor !== 'none') {
 			return _getCssClass(vm.table.settings.backgroundColor);
 		}
 
-		if (vm.table.columns.length === 0)
-		{
+		if (vm.table.columns.length === 0) {
 			return '';
 		}
 
-		if (!vm.table.columns[cell.columnIndex])
-		{
+		if (!vm.table.columns[cell.columnIndex]) {
 			return '';
 		}
 
@@ -270,24 +254,21 @@ function tablesEditorController($scope, $routeParams)
 		return _getCssClass(backgroundColour);
 	}
 
-	function _editRowSettings(row)
-	{
+	function _editRowSettings(row) {
 		var firstCell = row[0];
 
-		if (!firstCell)
-		{
+		if (!firstCell) {
 			return;
 		}
 
 		_editSettings(vm.table.rows[firstCell.rowIndex]);
 	}
 
-	function _editTableSettings()
-	{
-		vm.tableSettingsEditor = {
+	function _editTableSettings() {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit table settings",
+			size: "small",
 			prop: {
 				alias: "backgroundColour",
 				label: "Table Background Colour",
@@ -297,22 +278,23 @@ function tablesEditorController($scope, $routeParams)
 				},
 				value: vm.table.settings.backgroundColor
 			},
-			submit: function (model)
-			{
+			submit: function (model) {
 				console.log(model);
 				vm.table.settings.backgroundColor = model.prop.value[0];
-				vm.tableSettingsEditor.show = false;
-				vm.tableSettingsEditor = null;
-			}
+                editorService.close();
+			},
+			close: function () {
+                editorService.close();
+            }
 		};
-	}
+        editorService.open(options);
+    }
 
-	function _editSettings(settings)
-	{
-		vm.settingsEditor = {
+	function _editSettings(settings) {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit settings",
+			size: "small",
 			prop: {
 				alias: "backgroundColour",
 				label: "Background Colour",
@@ -322,27 +304,27 @@ function tablesEditorController($scope, $routeParams)
 				},
 				value: settings.backgroundColor
 			},
-			submit: function (model)
-			{
+			submit: function (model) {
 				console.log(model);
 				settings.backgroundColor = model.prop.value[0];
-				vm.settingsEditor.show = false;
-				vm.settingsEditor = null;
-			}
+                editorService.close();
+			},
+			close: function () {
+                editorService.close();
+            }
 		};
-	}
+        editorService.open(options);
+    }
 
 	function _loadTable() {
 
-		if ($scope.model.value && $scope.model.value instanceof Object)
-		{
+		if ($scope.model.value && $scope.model.value instanceof Object) {
 			console.log($scope.model.value);
 			vm.table = $scope.model.value;
 		}
 	}
 
-	function _save()
-	{
+	function _save() {
 		console.log('saving', vm.table);
 		_reIndexCells();
 
@@ -350,13 +332,11 @@ function tablesEditorController($scope, $routeParams)
 		$scope.model.value = vm.table;
 	}
 
-	function _showRowAndColumnSettings()
-	{
+	function _showRowAndColumnSettings() {
 		return vm.table.settings.backgroundColor === 'none';
 	}
 
-	function _initTable()
-	{
+	function _initTable() {
 		console.log('initTable');
 		vm.table = {
 			rows: [],
@@ -368,12 +348,10 @@ function tablesEditorController($scope, $routeParams)
 		_addRow();
 	}
 
-	function _init()
-	{
+	function _init() {
 		_initTable();
 
-		if ($routeParams.id !== "-1")
-		{
+		if ($routeParams.id !== "-1") {
 			_loadTable();
 		}
 

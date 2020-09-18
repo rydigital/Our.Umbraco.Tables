@@ -1,4 +1,4 @@
-function tablesEditorController($scope, $routeParams) {
+function tablesEditorController($scope, $routeParams, editorService) {
 	var vm = this;
 
 	var rowSettings = {
@@ -139,10 +139,10 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _editCell(cell) {
-		vm.richTextEditor = {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit cell value",
+			size: "small",
 			prop: {
 				alias: "value",
 				label: "",
@@ -187,17 +187,16 @@ function tablesEditorController($scope, $routeParams) {
 			},
 			submit: function (model) {
 				cell.value = model.prop.value;
-				vm.richTextEditor.show = false;
-				vm.richTextEditor = null;
-			},
+                editorService.close();
+            },
 			close: function (model) {
-				vm.richTextEditor.show = false;
-				vm.richTextEditor = null;
+                editorService.close();
             },
 			error: function (error) {
 			}
 		};
-	}
+        editorService.open(options);
+    }
 
 	function _getCssClass(backgroundColour) {
 		switch (backgroundColour) {
@@ -266,10 +265,10 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _editTableSettings() {
-		vm.tableSettingsEditor = {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit table settings",
+			size: "small",
 			prop: {
 				alias: "backgroundColour",
 				label: "Table Background Colour",
@@ -282,17 +281,20 @@ function tablesEditorController($scope, $routeParams) {
 			submit: function (model) {
 				console.log(model);
 				vm.table.settings.backgroundColor = model.prop.value[0];
-				vm.tableSettingsEditor.show = false;
-				vm.tableSettingsEditor = null;
-			}
+                editorService.close();
+			},
+			close: function () {
+                editorService.close();
+            }
 		};
-	}
+        editorService.open(options);
+    }
 
 	function _editSettings(settings) {
-		vm.settingsEditor = {
+		var options = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
 			title: "Edit settings",
+			size: "small",
 			prop: {
 				alias: "backgroundColour",
 				label: "Background Colour",
@@ -305,11 +307,14 @@ function tablesEditorController($scope, $routeParams) {
 			submit: function (model) {
 				console.log(model);
 				settings.backgroundColor = model.prop.value[0];
-				vm.settingsEditor.show = false;
-				vm.settingsEditor = null;
-			}
+                editorService.close();
+			},
+			close: function () {
+                editorService.close();
+            }
 		};
-	}
+        editorService.open(options);
+    }
 
 	function _loadTable() {
 
