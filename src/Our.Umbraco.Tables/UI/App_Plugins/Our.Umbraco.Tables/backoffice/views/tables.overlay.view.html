@@ -1,11 +1,35 @@
 <div ng-controller="Our.Umbraco.Tables.BackOffice.Overlay.Controller as vm">
+    <form name="overlayForm" ng-submit="save()" novalidate val-form-manager>
+        <umb-editor-view>
+            <umb-editor-header name="model.title"
+                               name-locked="true"
+                               hide-alias="true"
+                               hide-icon="true"
+                               hide-description="true">
+            </umb-editor-header>
 
-	<div class="umb-control-group">
+            <umb-editor-container>
+                <div class="umb-control-group">
+                    <umb-property property="model.prop">
+                        <umb-property-editor model="model.prop" />
+                    </umb-property>
+                </div>
+            </umb-editor-container>
 
-		<umb-property property="model.prop">
-			<umb-property-editor model="model.prop"/>
-		</umb-property>
-
-	</div>
-
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="model.close()">
+                    </umb-button>
+                    <umb-button type="submit"
+                                button-style="success"
+                                label-key="general_submit">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+        </umb-editor-view>
+    </form>
 </div>
