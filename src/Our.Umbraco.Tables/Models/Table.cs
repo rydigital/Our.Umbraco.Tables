@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Application.Features.TableGenerator.Models
+namespace Our.Umbraco.Tables.Models
 {
 	public class Table
 	{

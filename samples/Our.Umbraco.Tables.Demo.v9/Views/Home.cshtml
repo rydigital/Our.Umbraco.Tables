@@ -1,0 +1,70 @@
+﻿@using Our.Umbraco.Tables.Enums
+@using Our.Umbraco.Tables.Models
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = null;
+}
+
+@{
+    var firstRow = Model.Table.Cells.FirstOrDefault();
+    var rows = Model.Table.Rows.ToList();
+    var columns = Model.Table.Columns.ToList();
+    var tableStyles = Model.Table.Settings;
+}
+
+@if (firstRow != null)
+{
+    <table class="@GetCssClass(tableStyles)">
+        <thead>
+            <tr class="@GetCssClass(tableStyles, Model.Table.Rows.FirstOrDefault())">
+                @foreach (var cell in firstRow)
+                {
+                    <th class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])" scope="col">
+                        @Html.Raw(cell.Value)
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model.Table.Cells.Skip(1))
+            {
+                <tr class="@GetCssClass(tableStyles, rows[row.FirstOrDefault().RowIndex])">
+                    @foreach (var cell in row)
+                    {
+                        <td class="@GetCssClass(tableStyles, columns[cell.ColumnIndex])">
+                            @Html.Raw(cell.Value)
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions
+{
+    public string GetCssClass(StyleData tableStyles, StyleData styleData = null)
+    {
+        var styles = tableStyles.BackgroundColor != BackgroundColour.None
+                        ? tableStyles.BackgroundColor
+                        : styleData?.BackgroundColor ?? BackgroundColour.None;
+
+        switch (styles)
+        {
+            case BackgroundColour.OddEven:
+                return "is-odd-even";
+            case BackgroundColour.OddEvenReverse:
+                return "is-odd-even-reversed";
+            case BackgroundColour.Primary:
+                return "is-primary";
+            case BackgroundColour.Secondary:
+                return "is-secondary";
+            case BackgroundColour.Tertiary:
+                return "is-tertiary";
+            default:
+                return null;
+        }
+    }
+}
