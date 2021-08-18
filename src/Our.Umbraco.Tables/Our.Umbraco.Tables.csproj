@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFrameworks>net472;net50</TargetFrameworks>
         <ContentTargetFolders>.</ContentTargetFolders>
         <Product>Our.Umbraco.Tables</Product>
         <Title>Our.Umbraco.Tables</Title>
@@ -30,7 +30,11 @@
     <PackageTags>umbraco plugin package</PackageTags>
   </PropertyGroup>
 
-    <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <PackageReference Include="UmbracoCms.Core" Version="8.5.3" />
+  </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net50'">
         <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-rc001" />
         <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0-rc001" />
     </ItemGroup>

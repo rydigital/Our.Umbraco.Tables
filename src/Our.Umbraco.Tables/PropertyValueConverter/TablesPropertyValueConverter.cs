@@ -1,10 +1,13 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Our.Umbraco.Tables.Models;
+#if NETCOREAPP
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;
-//using Umbraco.Core.Models.PublishedContent;
-//using Umbraco.Core.PropertyEditors;
+#else
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Core.PropertyEditors;
+#endif
 
 namespace Our.Umbraco.Tables.PropertyValueConverter
 {
