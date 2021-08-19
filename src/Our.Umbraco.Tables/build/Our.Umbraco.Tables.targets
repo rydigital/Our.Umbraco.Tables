@@ -1,27 +1,27 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
     <PropertyGroup>
-        <Our.Umbraco.TablesContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Our.Umbraco.Tables\**\*.*</Our.Umbraco.TablesContentFilesPath>
+        <OurUmbracoTablesContentFilesPath>$(MSBuildThisFileDirectory)..\Content\App_Plugins\Our.Umbraco.Tables\**\*.*</OurUmbracoTablesContentFilesPath>
     </PropertyGroup>
 
-    <Target Name="CopyOur.Umbraco.TablesAssets" BeforeTargets="Build">
+    <Target Name="CopyOurUmbracoTablesAssets" BeforeTargets="Build">
         <ItemGroup>
-            <Our.Umbraco.TablesContentFiles Include="$(Our.Umbraco.TablesContentFilesPath)" />
+            <OurUmbracoTablesContentFiles Include="$(OurUmbracoTablesContentFilesPath)" />
         </ItemGroup>
-        <Message Text="Copying Our.Umbraco.Tables files: $(Our.Umbraco.TablesContentFilesPath) - #@(Our.Umbraco.TablesContentFiles->Count()) files"  Importance="high" />
+        <Message Text="Copying Our.Umbraco.Tables files: $(OurUmbracoTablesContentFilesPath) - #@(OurUmbracoTablesContentFiles->Count()) files"  Importance="high" />
         <Copy
-            SourceFiles="@(Our.Umbraco.TablesContentFiles)"
-            DestinationFiles="@(Our.Umbraco.TablesContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Our.Umbraco.Tables\%(RecursiveDir)%(Filename)%(Extension)')"
+            SourceFiles="@(OurUmbracoTablesContentFiles)"
+            DestinationFiles="@(OurUmbracoTablesContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Our.Umbraco.Tables\%(RecursiveDir)%(Filename)%(Extension)')"
             SkipUnchangedFiles="true" />
 
     </Target>
 
-    <Target Name="ClearOur.Umbraco.TablesAssets" BeforeTargets="Clean">
+    <Target Name="ClearOurUmbracoTablesAssets" BeforeTargets="Clean">
         <ItemGroup>
-            <Our.Umbraco.TablesDir Include="$(MSBuildProjectDirectory)\App_Plugins\Our.Umbraco.Tables\" />
+            <OurUmbracoTablesDir Include="$(MSBuildProjectDirectory)\App_Plugins\Our.Umbraco.Tables\" />
         </ItemGroup>
         <Message Text="Clear old Our.Umbraco.Tables data"  Importance="high" />
-        <RemoveDir Directories="@(Our.Umbraco.TablesDir)"  />
+        <RemoveDir Directories="@(OurUmbracoTablesDir)"  />
     </Target>
 
 </Project>
