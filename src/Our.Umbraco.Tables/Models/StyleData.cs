@@ -9,5 +9,9 @@ namespace Our.Umbraco.Tables.Models
 		[JsonConverter(typeof(StringEnumConverter))]
 		[JsonProperty("backgroundColor")]
 		public BackgroundColour BackgroundColor { get; set; } = BackgroundColour.None;
+
+		[JsonConverter(typeof(StringEnumConverter))]
+		[JsonProperty("columnWidth")]
+		public ColumnWidth ColumnWidth { get; set; } = ColumnWidth.None;
 	}
 }

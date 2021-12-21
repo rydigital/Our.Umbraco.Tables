@@ -8,6 +8,18 @@ function tablesEditorController($scope, $routeParams) {
 		tertiary: { name: "Tertiary", value: "tertiary", sortOrder: 3 }
 	};
 
+	var columnSettings = {
+		none: { name: "None", value: "none", sortOrder: 0 },
+		10: { name: "10%", value: 10, sortOrder: 1 },
+		20: { name: "20%", value: 20, sortOrder: 2 },
+		30: { name: "30%", value: 30, sortOrder: 3 },
+		40: { name: "40%", value: 40, sortOrder: 3 },
+		50: { name: "50%", value: 50, sortOrder: 3 },
+		60: { name: "60%", value: 60, sortOrder: 3 },
+		70: { name: "70%", value: 70, sortOrder: 3 },
+		80: { name: "80%", value: 80, sortOrder: 3 },
+	};
+
 	var tableSettings = {
 		none: { name: "None", value: "none", sortOrder: 0 },
 		primary: { name: "Primary", value: "primary", sortOrder: 1 },
@@ -33,12 +45,20 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _addColumn() {
-		if (vm.table.columns.length >= 12) {
+
+		var columns = 12;
+		if ($scope.model.config.columns !== null || $scope.model.config.columns !== "") {
+			console.log("column :" + $scope.model.config.columns)
+			columns = $scope.model.config.columns;
+		}
+
+		if (vm.table.columns.length >= columns) {
 			return;
 		}
 
 		var column = {
-			backgroundColor: 'none'
+			backgroundColor: 'none',
+			columnWidth: 'none'
 		};
 
 		vm.table.columns.push(column);
@@ -260,6 +280,7 @@ function tablesEditorController($scope, $routeParams) {
 			return;
 		}
 
+
 		_editSettings(vm.table.rows[firstCell.rowIndex]);
 	}
 
@@ -300,9 +321,19 @@ function tablesEditorController($scope, $routeParams) {
 				},
 				value: settings.backgroundColor
 			},
+			prop2: {
+				alias: "columnWidth",
+				label: "Column Width",
+				view: "dropdownFlexible",
+				config: {
+					items: columnSettings
+				},
+				value: settings.columnWidth
+			},
 			submit: function (model) {
 				console.log(model);
 				settings.backgroundColor = model.prop.value[0];
+				settings.columnWidth = model.prop2.value[0];
 				vm.settingsEditor.show = false;
 				vm.settingsEditor = null;
 			}

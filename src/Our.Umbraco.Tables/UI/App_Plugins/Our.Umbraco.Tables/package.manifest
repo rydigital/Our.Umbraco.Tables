@@ -8,6 +8,22 @@
 			"editor": {
 				"view": "~/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.editor.view.html",
 				"valueType": "JSON"
+			},
+			"prevalues": {
+				"fields": [
+					{
+						"label": "Preview",
+						"description": "Max Columns",
+						"key": "columns",
+						"view": "number"
+					},
+					{
+						"label": "Preview",
+						"description": "Can select colours",
+						"key": "enableColours",
+						"view": "bool"
+					}
+				]
 			}
 		}
 	],
