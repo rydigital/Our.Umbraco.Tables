@@ -310,7 +310,7 @@ function tablesEditorController($scope, $routeParams) {
 
 	function _editRowSettings(settings) {
 
-		if ($scope.model.config.enableColours == 1) {
+		if ($scope.model.config.disableColours == 0) {
 
 			vm.settingsEditor = {
 				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tablesSingleProp.overlay.view.html",
@@ -336,7 +336,7 @@ function tablesEditorController($scope, $routeParams) {
 
 	function _editColumnSettings(settings) {
 
-		if ($scope.model.config.enableColours == 1) {
+		if ($scope.model.config.disableColours == 0) {
 			vm.settingsEditor = {
 				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
 				show: true,

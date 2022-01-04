@@ -19,8 +19,8 @@
 					},
 					{
 						"label": "Preview",
-						"description": "Can select colours",
-						"key": "enableColours",
+						"description": "Can't select colours",
+						"key": "disableColours",
 						"view": "boolean"
 					}
 				]
