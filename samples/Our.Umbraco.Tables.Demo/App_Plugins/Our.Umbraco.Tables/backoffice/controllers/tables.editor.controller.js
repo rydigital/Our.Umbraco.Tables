@@ -12,8 +12,14 @@ function tablesEditorController($scope, $routeParams) {
 		none: { name: "None", value: "none", sortOrder: 0 },
 		10: { name: "10%", value: 10, sortOrder: 1 },
 		20: { name: "20%", value: 20, sortOrder: 2 },
-		30: { name: "30%", value: 30, sortOrder: 3 }
+		30: { name: "30%", value: 30, sortOrder: 3 },
+		40: { name: "40%", value: 40, sortOrder: 3 },
+		50: { name: "50%", value: 50, sortOrder: 3 },
+		60: { name: "60%", value: 60, sortOrder: 3 },
+		70: { name: "70%", value: 70, sortOrder: 3 },
+		80: { name: "80%", value: 80, sortOrder: 3 },
 	};
+
 
 	var tableSettings = {
 		none: { name: "None", value: "none", sortOrder: 0 },
