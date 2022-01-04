@@ -40,7 +40,7 @@
 						</a>
 
 						<a class="control__button btn" ng-if="showRowAndColumnSettings()">
-							<i class="icon icon-settings" ng-click="editSettings(column)"></i>
+							<i class="icon icon-settings" ng-click="editColumnSettings(column)"></i>
 						</a>
 
 					</div>
@@ -82,8 +82,8 @@
 								</div>
 
 								<div class="table__column--content"
-								     ng-if="cell.value.length > 0"
-								     ng-bind-html="cell.value">
+									 ng-if="cell.value.length > 0"
+									 ng-bind-html="cell.value">
 								</div>
 
 							</div>
@@ -117,21 +117,21 @@
 	</div>
 
 	<umb-overlay ng-if="vm.richTextEditor.show"
-	             model="vm.richTextEditor"
-	             position="right"
-	             view="vm.richTextEditor.view">
+				 model="vm.richTextEditor"
+				 position="right"
+				 view="vm.richTextEditor.view">
 	</umb-overlay>
 
 	<umb-overlay ng-if="vm.settingsEditor.show"
-	             model="vm.settingsEditor"
-	             position="right"
-	             view="vm.settingsEditor.view">
+				 model="vm.settingsEditor"
+				 position="right"
+				 view="vm.settingsEditor.view">
 	</umb-overlay>
 
 	<umb-overlay ng-if="vm.tableSettingsEditor.show"
-	             model="vm.tableSettingsEditor"
-	             position="right"
-	             view="vm.tableSettingsEditor.view">
+				 model="vm.tableSettingsEditor"
+				 position="right"
+				 view="vm.tableSettingsEditor.view">
 	</umb-overlay>
 
 </div>
