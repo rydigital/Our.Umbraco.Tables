@@ -35,12 +35,12 @@
 
 					<div class="controls__control" ng-repeat="column in vm.table.columns">
 
-						<a class="control__button btn">
-							<i class="icon icon-trash" ng-click="removeColumn($index)"></i>
+						<a class="control__button btn" ng-click="removeColumn($index)">
+							<i class="icon icon-trash"></i>
 						</a>
 
-						<a class="control__button btn" ng-if="showRowAndColumnSettings()">
-							<i class="icon icon-settings" ng-click="editSettings(column)"></i>
+						<a class="control__button btn" ng-if="showRowAndColumnSettings()" ng-click="editSettings(column)">
+							<i class="icon icon-settings"></i>
 						</a>
 
 					</div>
@@ -96,12 +96,12 @@
 								<i class="icon icon-navigation"></i>
 							</a>
 
-							<a class="control__button btn">
-								<i class="icon icon-trash" ng-click="removeRow($index)"></i>
+							<a class="control__button btn" ng-click="removeRow($index)">
+								<i class="icon icon-trash"></i>
 							</a>
 
-							<a class="control__button btn" ng-if="showRowAndColumnSettings()">
-								<i class="icon icon-settings" ng-click="editRowSettings(row)"></i>
+							<a class="control__button btn" ng-if="showRowAndColumnSettings()" ng-click="editRowSettings(row)">
+								<i class="icon icon-settings"></i>
 							</a>
 
 						</div>
