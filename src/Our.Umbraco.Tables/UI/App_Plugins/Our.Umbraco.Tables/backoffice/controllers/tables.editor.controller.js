@@ -8,6 +8,18 @@ function tablesEditorController($scope, $routeParams) {
 		tertiary: { name: "Tertiary", value: "tertiary", sortOrder: 3 }
 	};
 
+	var columnSettings = {
+		none: { name: "None", value: "none", sortOrder: 0 },
+		10: { name: "10%", value: 10, sortOrder: 1 },
+		20: { name: "20%", value: 20, sortOrder: 2 },
+		30: { name: "30%", value: 30, sortOrder: 3 },
+		40: { name: "40%", value: 40, sortOrder: 4 },
+		50: { name: "50%", value: 50, sortOrder: 5 },
+		60: { name: "60%", value: 60, sortOrder: 6 },
+		70: { name: "70%", value: 70, sortOrder: 7 },
+		80: { name: "80%", value: 80, sortOrder: 8 },
+	};
+
 	var tableSettings = {
 		none: { name: "None", value: "none", sortOrder: 0 },
 		primary: { name: "Primary", value: "primary", sortOrder: 1 },
@@ -33,12 +45,20 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _addColumn() {
-		if (vm.table.columns.length >= 12) {
+
+		var columns = 12;
+		if ($scope.model.config.columns !== null || $scope.model.config.columns !== "") {
+			console.log("column :" + $scope.model.config.columns)
+			columns = $scope.model.config.columns;
+		}
+
+		if (vm.table.columns.length >= columns) {
 			return;
 		}
 
 		var column = {
-			backgroundColor: 'none'
+			backgroundColor: 'none',
+			columnWidth: 'none'
 		};
 
 		vm.table.columns.push(column);
@@ -262,7 +282,8 @@ function tablesEditorController($scope, $routeParams) {
 			return;
 		}
 
-		_editSettings(vm.table.rows[firstCell.rowIndex]);
+
+		_editRowSettings(vm.table.rows[firstCell.rowIndex]);
 	}
 
 	function _editTableSettings() {
@@ -288,27 +309,87 @@ function tablesEditorController($scope, $routeParams) {
 		};
 	}
 
-	function _editSettings(settings) {
-		vm.settingsEditor = {
-			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
-			show: true,
-			title: "Edit settings",
-			prop: {
-				alias: "backgroundColour",
-				label: "Background Colour",
-				view: "dropdownFlexible",
-				config: {
-					items: rowSettings
+
+	function _editRowSettings(settings) {
+
+		if ($scope.model.config.disableColours == 0) {
+
+			vm.settingsEditor = {
+				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tablesSingleProp.overlay.view.html",
+				show: true,
+				title: "Edit settings",
+				prop: {
+					alias: "backgroundColour",
+					label: "Background Colour",
+					view: "dropdownFlexible",
+					config: {
+						items: rowSettings
+					},
+					value: settings.backgroundColor
 				},
-				value: settings.backgroundColor
-			},
-			submit: function (model) {
-				console.log(model);
-				settings.backgroundColor = model.prop.value[0];
-				vm.settingsEditor.show = false;
-				vm.settingsEditor = null;
-			}
-		};
+				submit: function (model) {
+					settings.backgroundColor = model.prop.value[0];
+					vm.settingsEditor.show = false;
+					vm.settingsEditor = null;
+				}
+			};
+		}
+	}
+
+	function _editColumnSettings(settings) {
+
+		if ($scope.model.config.disableColours == 0) {
+			vm.settingsEditor = {
+				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
+				show: true,
+				title: "Edit settings",
+				prop: {
+					alias: "backgroundColour",
+					label: "Background Colour",
+					view: "dropdownFlexible",
+					config: {
+						items: rowSettings
+					},
+					value: settings.backgroundColor
+				},
+				prop2: {
+					alias: "columnWidth",
+					label: "Column Width",
+					view: "dropdownFlexible",
+					config: {
+						items: columnSettings
+					},
+					value: settings.columnWidth
+				},
+				submit: function (model) {
+					console.log(model);
+					settings.backgroundColor = model.prop.value[0];
+					settings.columnWidth = model.prop2.value[0];
+					vm.settingsEditor.show = false;
+					vm.settingsEditor = null;
+				}
+			};
+		} else {
+			vm.settingsEditor = {
+				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tablesSingleProp.overlay.view.html",
+				show: true,
+				title: "Edit settings",
+				prop: {
+					alias: "columnWidth",
+					label: "Column Width",
+					view: "dropdownFlexible",
+					config: {
+						items: columnSettings
+					},
+					value: settings.columnWidth
+				},
+				submit: function (model) {
+					settings.columnWidth = model.prop.value[0];
+					vm.settingsEditor.show = false;
+					vm.settingsEditor = null;
+				}
+			};
+		}
 	}
 
 	function _loadTable() {
@@ -356,7 +437,7 @@ function tablesEditorController($scope, $routeParams) {
 		$scope.removeRow = _removeRow;
 		$scope.editCell = _editCell;
 		$scope.$on("formSubmitting", _save);
-		$scope.editSettings = _editSettings;
+		$scope.editColumnSettings = _editColumnSettings;
 		$scope.getColumnClass = _getColumnClass;
 		$scope.getRowClass = _getRowClass;
 		$scope.editRowSettings = _editRowSettings;
