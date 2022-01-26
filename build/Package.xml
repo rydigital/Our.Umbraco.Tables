@@ -3,7 +3,7 @@
 	<info>
 		<package>
 			<name>Our.Umbraco.Tables</name>
-			<version>1.1.0</version>
+			<version>1.1.1</version>
 			<license url="http://opensource.org/licenses/MIT">MIT License</license>
 			<url>https://github.com/rydigital/Our.Umbraco.Tables</url>
 			<requirements type="Strict">
