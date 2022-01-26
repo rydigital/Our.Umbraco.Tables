@@ -8,18 +8,6 @@ function tablesEditorController($scope, $routeParams) {
 		tertiary: { name: "Tertiary", value: "tertiary", sortOrder: 3 }
 	};
 
-	var columnSettings = {
-		none: { name: "None", value: "none", sortOrder: 0 },
-		10: { name: "10%", value: 10, sortOrder: 1 },
-		20: { name: "20%", value: 20, sortOrder: 2 },
-		30: { name: "30%", value: 30, sortOrder: 3 },
-		40: { name: "40%", value: 40, sortOrder: 4 },
-		50: { name: "50%", value: 50, sortOrder: 5 },
-		60: { name: "60%", value: 60, sortOrder: 6 },
-		70: { name: "70%", value: 70, sortOrder: 7 },
-		80: { name: "80%", value: 80, sortOrder: 8 },
-	};
-
 	var tableSettings = {
 		none: { name: "None", value: "none", sortOrder: 0 },
 		primary: { name: "Primary", value: "primary", sortOrder: 1 },
@@ -28,6 +16,27 @@ function tablesEditorController($scope, $routeParams) {
 		oddEven: { name: "Odd and Even", value: "oddeven", sortOrder: 4 },
 		oddEvenReverse: { name: "Odd and Even (reversed)", value: "oddevenreverse", sortOrder: 5 }
 	};
+
+	function _addColumn() {
+		var columns = 12;
+
+		if ($scope.model.config.columns !== undefined) {
+			columns = $scope.model.config.columns;
+		}
+
+		if (vm.table.columns.length >= columns) {
+			return;
+
+		} else {
+			var column = {
+				backgroundColor: 'none',
+				columnWidth: 'none'
+			};
+
+			vm.table.columns.push(column);
+			_addEmptyCells();
+		}
+	}
 
 	function _addRow() {
 		var row = {
@@ -44,27 +53,6 @@ function tablesEditorController($scope, $routeParams) {
 		_addEmptyCells();
 	}
 
-	function _addColumn() {
-
-		var columns = 12;
-		if ($scope.model.config.columns !== null || $scope.model.config.columns !== "") {
-			console.log("column :" + $scope.model.config.columns)
-			columns = $scope.model.config.columns;
-		}
-
-		if (vm.table.columns.length >= columns) {
-			return;
-		}
-
-		var column = {
-			backgroundColor: 'none',
-			columnWidth: 'none'
-		};
-
-		vm.table.columns.push(column);
-		_addEmptyCells();
-	}
-
 	function _addEmptyCells() {
 		if (vm.table.cells.length === 0) {
 			_addNewRows(vm.table.rows.length);
@@ -73,8 +61,6 @@ function tablesEditorController($scope, $routeParams) {
 			// get column difference 
 			var firstCell = vm.table.cells[0];
 			var diffColumns = vm.table.columns.length - firstCell.length;
-
-			console.log(`DiffColumns: ${diffColumns}`);
 
 			if (diffColumns < 0) {
 				// remove columns
@@ -102,8 +88,6 @@ function tablesEditorController($scope, $routeParams) {
 				_addNewRows(diffRows);
 			}
 		}
-
-		console.log(vm.table);
 	}
 
 	function _addNewRows(count) {
@@ -211,9 +195,7 @@ function tablesEditorController($scope, $routeParams) {
 				vm.richTextEditor = null;
 			},
 			close: function (model) {
-				vm.richTextEditor.show = false;
-				vm.richTextEditor = null;
-            },
+			},
 			error: function (error) {
 			}
 		};
@@ -282,8 +264,7 @@ function tablesEditorController($scope, $routeParams) {
 			return;
 		}
 
-
-		_editRowSettings(vm.table.rows[firstCell.rowIndex]);
+		_editSettings(vm.table.rows[firstCell.rowIndex]);
 	}
 
 	function _editTableSettings() {
@@ -309,10 +290,9 @@ function tablesEditorController($scope, $routeParams) {
 		};
 	}
 
-
 	function _editRowSettings(settings) {
 
-		if ($scope.model.config.disableColours == 0) {
+		if ($scope.model.config.disableColours == 0 || $scope.model.config.disableColours === undefined) {
 
 			vm.settingsEditor = {
 				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tablesSingleProp.overlay.view.html",
@@ -338,7 +318,7 @@ function tablesEditorController($scope, $routeParams) {
 
 	function _editColumnSettings(settings) {
 
-		if ($scope.model.config.disableColours == 0) {
+		if ($scope.model.config.disableColours == 0 || $scope.model.config.disableColours === undefined) {
 			vm.settingsEditor = {
 				view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
 				show: true,
@@ -401,7 +381,6 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _save() {
-		console.log('saving', vm.table);
 		_reIndexCells();
 
 		//save
@@ -447,6 +426,18 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	_init();
+
+	var columnSettings = {
+		none: { name: "None", value: "none", sortOrder: 0 },
+		10: { name: "10%", value: 10, sortOrder: 1 },
+		20: { name: "20%", value: 20, sortOrder: 2 },
+		30: { name: "30%", value: 30, sortOrder: 3 },
+		40: { name: "40%", value: 40, sortOrder: 4 },
+		50: { name: "50%", value: 50, sortOrder: 5 },
+		60: { name: "60%", value: 60, sortOrder: 6 },
+		70: { name: "70%", value: 70, sortOrder: 7 },
+		80: { name: "80%", value: 80, sortOrder: 8 },
+	};
 }
 
 angular.module("umbraco").controller("Our.Umbraco.Tables.BackOffice.Editor.Controller", tablesEditorController);
