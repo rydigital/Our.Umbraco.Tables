@@ -1,8 +1,7 @@
-﻿using System;
-using Newtonsoft.Json;
-using Our.Umbraco.Tables.Models;
-using Umbraco.Core.Models.PublishedContent;
-using Umbraco.Core.PropertyEditors;
+﻿using Our.Umbraco.Tables.Models;
+using System.Text.Json;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PropertyEditors;
 
 namespace Our.Umbraco.Tables.PropertyValueConverter
 {
@@ -24,8 +23,8 @@ namespace Our.Umbraco.Tables.PropertyValueConverter
 		public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
 		{
 			return inter == null
-				       ? new TableData()
-				       : JsonConvert.DeserializeObject<TableData>(inter.ToString());
+				? new TableData()
+				: JsonSerializer.Deserialize<TableData>(inter.ToString());
 		}
 	}
 }

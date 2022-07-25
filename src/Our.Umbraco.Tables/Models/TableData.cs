@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Our.Umbraco.Tables.Models
 {
 	public class TableData
 	{
-		[JsonProperty("settings")]
+		[JsonPropertyName("settings")]
 		public StyleData Settings { get; set; } = new StyleData();
 
-		[JsonProperty("rows")]
+		[JsonPropertyName("rows")]
 		public IEnumerable<StyleData> Rows { get; set; } = new List<StyleData>();
 
-		[JsonProperty("columns")]
+		[JsonPropertyName("columns")]
 		public IEnumerable<StyleData> Columns { get; set; } = new List<StyleData>();
 
-		[JsonProperty("cells")]
+		[JsonPropertyName("cells")]
 		public IEnumerable<IEnumerable<CellData>> Cells { get; set; } = new List<List<CellData>>();
 	}
 }

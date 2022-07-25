@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Tables", "Our.Umbraco.Tables\Our.Umbraco.Tables.csproj", "{798FAB04-946E-4E4F-8520-746FCD436F25}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{AFB3ED6D-89E8-4E87-B571-DB686582A3E6}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
@@ -24,26 +22,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C46868F8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Tables.Demo", "..\samples\Our.Umbraco.Tables.Demo\Our.Umbraco.Tables.Demo.csproj", "{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Our.Umbraco.Tables", "Our.Umbraco.Tables\Our.Umbraco.Tables.csproj", "{D61D46C6-25E3-4884-B6FC-D836908FDA06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Our.Umbraco.Tables.Demo.v9", "..\samples\Our.Umbraco.Tables.Demo.v9\Our.Umbraco.Tables.Demo.v9.csproj", "{C09CAA07-6EDD-4FB1-AEE9-8770276EF737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{798FAB04-946E-4E4F-8520-746FCD436F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{798FAB04-946E-4E4F-8520-746FCD436F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{798FAB04-946E-4E4F-8520-746FCD436F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{798FAB04-946E-4E4F-8520-746FCD436F25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61D46C6-25E3-4884-B6FC-D836908FDA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61D46C6-25E3-4884-B6FC-D836908FDA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61D46C6-25E3-4884-B6FC-D836908FDA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61D46C6-25E3-4884-B6FC-D836908FDA06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09CAA07-6EDD-4FB1-AEE9-8770276EF737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09CAA07-6EDD-4FB1-AEE9-8770276EF737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09CAA07-6EDD-4FB1-AEE9-8770276EF737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09CAA07-6EDD-4FB1-AEE9-8770276EF737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7A6ED7B0-DBBB-40C1-A97B-06494315ED5A} = {859576E7-1133-41DD-80B0-56717996D84A}
+		{C09CAA07-6EDD-4FB1-AEE9-8770276EF737} = {859576E7-1133-41DD-80B0-56717996D84A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B85425E-7688-48F6-8F93-0BB7D584931D}
