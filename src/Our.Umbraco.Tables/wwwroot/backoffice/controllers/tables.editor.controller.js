@@ -189,12 +189,8 @@ function tablesEditorController($scope, $routeParams) {
 				cell.value = model.prop.value;
 				vm.richTextEditor.show = false;
 				vm.richTextEditor = null;
-			},
-			close: function (model) {
-			},
-			error: function (error) {
 			}
-		};
+        };
 	}
 
 	function _getCssClass(backgroundColour) {
