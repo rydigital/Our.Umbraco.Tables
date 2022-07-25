@@ -1,4 +1,4 @@
-function tablesEditorController($scope, $routeParams) {
+function tablesEditorController($scope, $routeParams, $http) {
 	var vm = this;
 
 	var rowSettings = {
@@ -139,53 +139,26 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _editCell(cell) {
-		vm.richTextEditor = {
+        var rteTools;
+		$http.get("backoffice/OurUmbracoTables/OurUmbracoTablesApi/GetDataType").then(function (res) {
+			var d = res.data;
+            rteTools = d.preValues[0].value;
+        });
+        vm.richTextEditor = {
 			view: "/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.overlay.view.html",
 			show: true,
 			title: "Edit cell value",
 			prop: {
-				alias: "value",
-				label: "",
-				view: "rte",
-				config: {
-					editor: {
-						toolbar: [
-							"ace",
-							//	"removeformat",
-							"styleselect",
-							"bold",
-							"italic",
-							//	"underline",
-							//	"strikethrough",
-							"alignleft",
-							"aligncenter",
-							"alignright",
-							//	"alignjustify",
-							"bullist",
-							"numlist",
-							//	"outdent",
-							//	"indent",
-							"link",
-							//	"unlink",
-							"umbmediapicker",
-							//	"umbmacro",
-							//	"umbembeddialog",
-							//	"hr",
-							//	"subscript",
-							//	"superscript",
-							//	"charmap",
-							//	"rtl",
-							//	"ltr"
-						],
-						dimensions: {
-							height: 500,
-							width: 0
-						}
-					}
-				},
-				value: cell.value
-			},
-			submit: function (model) {
+                alias: "value",
+                label: "",
+                view: "rte",
+                editor: "Umbraco.TinyMCE",
+                config: {
+					editor: rteTools
+                },
+                value: cell.value
+            },
+            submit: function (model) {
 				cell.value = model.prop.value;
 				vm.richTextEditor.show = false;
 				vm.richTextEditor = null;
