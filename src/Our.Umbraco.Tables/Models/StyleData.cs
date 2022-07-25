@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Our.Umbraco.Tables.Enums;
+﻿using Our.Umbraco.Tables.Enums;
+using System.Text.Json.Serialization;
 
 namespace Our.Umbraco.Tables.Models
 {
 	public class StyleData
 	{
-		[JsonConverter(typeof(StringEnumConverter))]
-		[JsonProperty("backgroundColor")]
+		[JsonConverter(typeof(JsonStringEnumConverter))]
+		[JsonPropertyName("backgroundColor")]
 		public BackgroundColour BackgroundColor { get; set; } = BackgroundColour.None;
 	}
 }
