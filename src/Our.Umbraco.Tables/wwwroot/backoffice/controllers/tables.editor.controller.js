@@ -54,7 +54,7 @@ function tablesEditorController($scope, $routeParams) {
 			var firstCell = vm.table.cells[0];
 			var diffColumns = vm.table.columns.length - firstCell.length;
 
-			console.log(`DiffColumns: ${diffColumns}`);
+			//console.log(`DiffColumns: ${diffColumns}`);
 
 			if (diffColumns < 0) {
 				// remove columns
@@ -83,7 +83,7 @@ function tablesEditorController($scope, $routeParams) {
 			}
 		}
 
-		console.log(vm.table);
+		//console.log(vm.table);
 	}
 
 	function _addNewRows(count) {
@@ -274,7 +274,7 @@ function tablesEditorController($scope, $routeParams) {
 				value: vm.table.settings.backgroundColor
 			},
 			submit: function (model) {
-				console.log(model);
+				//console.log(model);
 				vm.table.settings.backgroundColor = model.prop.value[0];
 				vm.tableSettingsEditor.show = false;
 				vm.tableSettingsEditor = null;
@@ -297,7 +297,7 @@ function tablesEditorController($scope, $routeParams) {
 				value: settings.backgroundColor
 			},
 			submit: function (model) {
-				console.log(model);
+				//console.log(model);
 				settings.backgroundColor = model.prop.value[0];
 				vm.settingsEditor.show = false;
 				vm.settingsEditor = null;
@@ -308,13 +308,13 @@ function tablesEditorController($scope, $routeParams) {
 	function _loadTable() {
 
 		if ($scope.model.value && $scope.model.value instanceof Object) {
-			console.log($scope.model.value);
+			//console.log($scope.model.value);
 			vm.table = $scope.model.value;
 		}
 	}
 
 	function _save() {
-		console.log('saving', vm.table);
+		//console.log('saving', vm.table);
 		_reIndexCells();
 
 		//save
@@ -326,7 +326,7 @@ function tablesEditorController($scope, $routeParams) {
 	}
 
 	function _initTable() {
-		console.log('initTable');
+		//console.log('initTable');
 		vm.table = {
 			rows: [],
 			columns: [],
