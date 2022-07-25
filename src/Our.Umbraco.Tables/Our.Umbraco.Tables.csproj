@@ -1,56 +1,22 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
     <PropertyGroup>
         <TargetFrameworks>net60</TargetFrameworks>
-        <ContentTargetFolders>.</ContentTargetFolders>
-        <Product>Our.Umbraco.Tables</Product>
+	    <StaticWebAssetBasePath>App_Plugins/Our.Umbraco.Tables</StaticWebAssetBasePath>
+	    <Nullable>enable</Nullable>
+	    <ImplicitUsings>enable</ImplicitUsings>
+	    <Product>Our.Umbraco.Tables</Product>
         <Title>Our.Umbraco.Tables</Title>
     </PropertyGroup>
-
-  <!-- nuget package stuff -->
-  <PropertyGroup>
-    <PackageId>Our.Umbraco.Tables</PackageId>
-    <Version>2.0-beta001</Version>
-    <authors>Radley Yeldar</authors>
-    <owners>Radley Yeldar</owners>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://our.umbraco.com/packages/backoffice-extensions/ourumbracotables/</PackageProjectUrl>
-    <PackageTags>Umbraco</PackageTags>
-    <RepositoryUrl>https://github.com/rydigital/Our.Umbraco.Tables</RepositoryUrl>
-    <Description>A collection of backoffice elements designed to help Umbraco developers extend the backoffice.</Description>
-    <PackageReleaseNotes>
-      1.0 - Initial version
-      2.0 - Multi-targeted v8/v9 version
-    </PackageReleaseNotes>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <ContentTargetFolders>content</ContentTargetFolders>
-    <PackageOutputPath>../../output</PackageOutputPath>
-    <PackageTags>umbraco plugin package</PackageTags>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
-    <PackageReference Include="UmbracoCms.Core" Version="8.5.3" />
-  </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework)' == 'net50'">
-        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0-rc001" />
-        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0-rc001" />
-    </ItemGroup>
-
     <ItemGroup>
-        <Content Include="App_Plugins\Our.Umbraco.Tables\**\*.*">
-            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-        </Content>
-        <None Include="build\**\*.*">
-            <Pack>True</Pack>
-            <PackagePath>buildTransitive</PackagePath>
-        </None>
+      <EmbeddedResource Include="package.manifest" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Umbraco.Cms.Core" Version="10.0.0" />
-    </ItemGroup>
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
+		<PackageReference Include="Umbraco.Cms.Core" Version="10.0.0" />
+	</ItemGroup>
 </Project>

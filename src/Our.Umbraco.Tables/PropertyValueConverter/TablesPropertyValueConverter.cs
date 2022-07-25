@@ -1,5 +1,4 @@
-﻿using System;
-using Our.Umbraco.Tables.Models;
+﻿using Our.Umbraco.Tables.Models;
 using System.Text.Json;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;

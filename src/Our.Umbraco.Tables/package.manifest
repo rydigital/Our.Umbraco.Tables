@@ -2,8 +2,8 @@
 	"propertyEditors": [
 		{
 			"alias": "Our.Umbraco.Tables",
-			"name": "Our.Umbraco.Tables",
-			"icon": "icon-grid",
+			"name": "Table",
+			"icon": "icon-forms-table",
 			"group": "Rich Content",
 			"editor": {
 				"view": "~/App_Plugins/Our.Umbraco.Tables/backoffice/views/tables.editor.view.html",
